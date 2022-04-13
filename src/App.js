@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components"
+import AnimatedCard from "./components/AnimatedCard"
+import AnimatedPopCard from "./components/AnimatedPopCard"
+import SideNavbar from "./components/SideNavbar"
+import DateRangePicker from "./components/DateRangePicker"
+
+const Container = styled.div`
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  background-color: hsl(207, 19%, 9%);
+  /* background-color: whitesmoke; */
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container>
+      {/* {<AnimatedCard />} */}
+      {/* <AnimatedPopCard /> */}
+      {/* <SideNavbar /> */}
+      {/* <DateRangePicker /> */}
+    </Container>
+  )
 }
 
-export default App;
+export default App
