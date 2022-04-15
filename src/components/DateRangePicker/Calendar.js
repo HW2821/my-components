@@ -53,7 +53,6 @@ const Table = styled.table`
     display: flex;
     justify-content: space-evenly;
   }
-
   th {
     flex: 1;
     font-weight: normal;

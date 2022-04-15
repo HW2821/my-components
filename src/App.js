@@ -1,13 +1,16 @@
-import styled from "styled-components"
+import styled from "styled-components/macro"
 import AnimatedCard from "./components/AnimatedCard"
 import AnimatedPopCard from "./components/AnimatedPopCard"
 import SideNavbar from "./components/SideNavbar"
 import DateRangePicker from "./components/DateRangePicker"
+import MultiDropDown from "./components/MultiDropDown"
+import Test from "./components/Test"
 
 const Container = styled.div`
-  display: grid;
+  display: flex;
   min-height: 100vh;
-  place-items: center;
+  justify-content: center;
+  align-items: center;
   background-color: hsl(207, 19%, 9%);
   /* background-color: whitesmoke; */
 `
@@ -19,6 +22,8 @@ function App() {
       {/* <AnimatedPopCard /> */}
       {/* <SideNavbar /> */}
       {/* <DateRangePicker /> */}
+      <MultiDropDown />
+      {/* <Test /> */}
     </Container>
   )
 }

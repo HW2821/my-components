@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { DateContext } from "."
 import { format } from "date-fns"
 import { keyframes } from "styled-components"
+import { css } from "styled-components"
 const Container = styled.div`
   margin: 1rem;
   flex: 1;
@@ -28,10 +29,15 @@ const Bar = styled.div`
   background-color: #4bafbc;
   transition: all 0.5s ease;
   border-radius: 1px;
-  display: ${(p) => !p.show && "none"};
   opacity: 0;
   animation: ${fade} 0.5s ease forwards;
-  transform: translateX(${(p) => (p.focus === "l" ? "0" : "calc(100% + 3rem)")});
+  transform: translateX(${({ focus }) => (focus === "l" ? "0" : "calc(100% + 3rem)")});
+
+  ${({ show }) =>
+    show &&
+    css`
+      display: none;
+    `}
 `
 
 export default function ({ hoverDate, start, end, focus, setFocus, show }) {

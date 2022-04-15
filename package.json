@@ -11,6 +11,7 @@
     "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
     "react-scripts": "5.0.0",
+    "react-transition-group": "^4.4.2",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
@@ -38,7 +39,7 @@
       "last 1 safari version"
     ]
   },
-  "resolutions": {
-    "styled-components": "^5"
+  "devDependencies": {
+    "babel-plugin-macros": "^3.1.0"
   }
 }
