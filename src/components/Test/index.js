@@ -25,43 +25,31 @@ const ZoomOut = keyframes`
     }
 
 `
-const show = css`
-  animation: ${zoomIn} 0.5s ease forwards;
-`
-const hide = css`
-  animation: ${ZoomOut} 0.5s ease forwards;
-`
+
 const Square = styled.div`
   position: absolute;
   top: 100%;
   width: 100px;
   height: 100px;
   background-color: #b75959;
-  ${({ out }) => (out ? hide : show)}
 `
 
-export default function () {
+export default function Test() {
   const [open, setOpen] = useState(false)
-  const [out, setOut] = useState(false)
-  const handleOpen = () => {
-    if (open) {
-      setOut(!out)
-    } else setOpen(!open)
+  const [text, setText] = useState("123")
+  const handleClick = () => {
+    setText(text + "1")
+    setText("")
   }
-
-  useEffect(() => {
-    if (!out) return
-
-    setTimeout(() => {
-      setOpen(false)
-      setOut(false)
-    }, 1000)
-  }, [out])
 
   return (
     <Container>
-      {open && <Square out={out} />}
-      <button onClick={handleOpen}>Click</button>
+      <Text text={text} />
+      <button onClick={handleClick}>Click</button>
     </Container>
   )
+}
+
+const Text = ({ text }) => {
+  return <div style={{ color: "white" }}>{text}</div>
 }

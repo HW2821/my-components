@@ -32,12 +32,7 @@ const Bar = styled.div`
   opacity: 0;
   animation: ${fade} 0.5s ease forwards;
   transform: translateX(${({ focus }) => (focus === "l" ? "0" : "calc(100% + 3rem)")});
-
-  ${({ show }) =>
-    show &&
-    css`
-      display: none;
-    `}
+  display: ${({ show }) => (show ? "" : "none")};
 `
 
 export default function ({ hoverDate, start, end, focus, setFocus, show }) {

@@ -52,8 +52,6 @@ const DropIcon = styled.div`
   }
 `
 
-const MenuContainer = styled.div``
-
 export default function DropDown() {
   const [open, setOpen] = useState(false)
   const dropRef = useRef()
