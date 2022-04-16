@@ -1,20 +1,31 @@
 {
   "files": {
     "main.css": "/my-components/static/css/main.edc2a508.css",
-    "main.js": "/my-components/static/js/main.77a32c16.js",
+    "main.js": "/my-components/static/js/main.2d304f9f.js",
+    "static/media/background.jpg": "/my-components/static/media/background.b84222b0e60e5f68c6fb.jpg",
+    "static/media/scissors.png": "/my-components/static/media/scissors.f22fd675dbf3da29b62e.png",
+    "static/media/laptop.png": "/my-components/static/media/laptop.bb96ecd2010184ea2e2d.png",
+    "static/media/sign.png": "/my-components/static/media/sign.c1ca8195415cbb898659.png",
+    "static/media/zelda.jpg": "/my-components/static/media/zelda.5c9b780288316d898c73.jpg",
     "static/media/cog.svg": "/my-components/static/media/cog.8c5b9138d8c4be979ec844f26605245f.svg",
+    "static/media/wave.svg": "/my-components/static/media/wave.f43adb89d4eecabeac16696842ebb99c.svg",
     "index.html": "/my-components/index.html",
     "static/media/bell.svg": "/my-components/static/media/bell.f0c76da202b5530dc5ae44ada6df4fa7.svg",
     "static/media/messenger.svg": "/my-components/static/media/messenger.392610667b2d24a04fdacbe1aa403dce.svg",
-    "static/media/chevron.svg": "/my-components/static/media/chevron.52254b8ec9e2b910c175508f0dfe4601.svg",
     "static/media/arrow.svg": "/my-components/static/media/arrow.2e552680862d14cd24637c6387dfb5b7.svg",
+    "static/media/4.svg": "/my-components/static/media/4.72b24e9b0d998bb109956711e1060b69.svg",
+    "static/media/1.svg": "/my-components/static/media/1.1bc549d87127d16d063c131d79878837.svg",
+    "static/media/2.svg": "/my-components/static/media/2.c9c18407d2a2a26d0db23c9811456a24.svg",
+    "static/media/3.svg": "/my-components/static/media/3.46b5a4f0d78b0a0e2f5430b26bb1a6e7.svg",
+    "static/media/5.svg": "/my-components/static/media/5.c39c83153fca88780b52fa5d51befcdb.svg",
+    "static/media/chevron.svg": "/my-components/static/media/chevron.52254b8ec9e2b910c175508f0dfe4601.svg",
     "static/media/plus.svg": "/my-components/static/media/plus.d5a88a59d9ab7bb15c7642d9d44ee039.svg",
     "static/media/caret.svg": "/my-components/static/media/caret.17f0a4fb24c6564ffcbd1ce6ce1d6c92.svg",
     "main.edc2a508.css.map": "/my-components/static/css/main.edc2a508.css.map",
-    "main.77a32c16.js.map": "/my-components/static/js/main.77a32c16.js.map"
+    "main.2d304f9f.js.map": "/my-components/static/js/main.2d304f9f.js.map"
   },
   "entrypoints": [
     "static/css/main.edc2a508.css",
-    "static/js/main.77a32c16.js"
+    "static/js/main.2d304f9f.js"
   ]
 }
