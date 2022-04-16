@@ -1,5 +1,11 @@
 import React from "react"
-import styled from "styled-components"
+import styled from "styled-components/macro"
+import arrow from "./img/arrow.svg"
+import img1 from "./img/1.svg"
+import img2 from "./img/2.svg"
+import img3 from "./img/3.svg"
+import img4 from "./img/4.svg"
+import img5 from "./img/5.svg"
 
 const Container = styled.div`
   --text-primary: #b6b6b6;
@@ -106,35 +112,35 @@ export default function SideNavbar() {
       <Menu>
         <MenuTitleContainer>
           <MenuTitle>My Menu</MenuTitle>
-          <MenuArrow src="/side-navbar/arrow.svg" />
+          <MenuArrow src={arrow} />
         </MenuTitleContainer>
         <Item>
           <Link>
-            <img src="/side-navbar/1.svg" />
+            <img src={img1} />
             <span>Cats</span>
           </Link>
         </Item>
         <Item>
           <Link>
-            <img src="/side-navbar/2.svg" />
+            <img src={img2} />
             <span>Dogs</span>
           </Link>
         </Item>
         <Item>
           <Link>
-            <img src="/side-navbar/3.svg" />
+            <img src={img3} />
             <span>Fish</span>
           </Link>
         </Item>
         <Item>
           <Link>
-            <img src="/side-navbar/4.svg" />
+            <img src={img4} />
             <span>Bears</span>
           </Link>
         </Item>
         <Item>
           <Link>
-            <img src="/side-navbar/5.svg" />
+            <img src={img5} />
             <span>Monkey</span>
           </Link>
         </Item>

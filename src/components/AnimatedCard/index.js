@@ -1,10 +1,11 @@
 import React from "react"
 import styled from "styled-components"
+import bg from "./img/background.jpg"
 
 const Container = styled.div`
   --green: #4ad04f;
   --dark: hsl(207, 19%, 9%);
-  background-image: url("/animated-card/background.jpg");
+  background-image: url(${bg});
   background-size: cover;
   background-color: darkgray;
   background-position: center;

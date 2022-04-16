@@ -77,7 +77,7 @@ function App() {
   }
 
   useEffect(() => {
-    navigate("/" + index)
+    navigate("/my-components/" + index)
   }, [index])
 
   return (
@@ -107,6 +107,6 @@ const components = [
   // <Test />,
 ]
 
-const mapToRoutes = () => components.map((c, i) => <Route key={i} path={"/" + i} element={c} />)
+const mapToRoutes = () => components.map((c, i) => <Route key={i} path={"/my-components/" + i} element={c} />)
 
 export default App

@@ -1,5 +1,10 @@
 import styled from "styled-components"
 import { keyframes } from "styled-components"
+import laptop from "./img/laptop.png"
+import scissors from "./img/scissors.png"
+import sign from "./img/sign.png"
+import wave from "./img/wave.svg"
+import zelda from "./img/zelda.jpg"
 
 const Container = styled.div`
   img {
@@ -219,22 +224,12 @@ const BackGround = styled.div`
   }
 `
 
-const waveSvg = (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-    <path
-      fill="#224244"
-      fillOpacity="1"
-      d="M0,160L21.8,149.3C43.6,139,87,117,131,128C174.5,139,218,181,262,176C305.5,171,349,117,393,101.3C436.4,85,480,107,524,122.7C567.3,139,611,149,655,144C698.2,139,742,117,785,96C829.1,75,873,53,916,85.3C960,117,1004,203,1047,202.7C1090.9,203,1135,117,1178,101.3C1221.8,85,1265,139,1309,149.3C1352.7,160,1396,128,1418,112L1440,96L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z"
-    ></path>
-  </svg>
-)
-
 export default function AnimatedPopCard() {
   return (
     <Container>
       <RankTag>3</RankTag>
       <Front>
-        <CoverImg src="/animated-popcard/zelda.jpg" alt="" />
+        <CoverImg src={zelda} alt="" />
         <GameTitle>Legend of Zelda</GameTitle>
         <Stats>
           <Viwers>42w</Viwers>
@@ -254,26 +249,36 @@ export default function AnimatedPopCard() {
         <Button>See more streamers</Button>
         <Wrapper>
           <Streamer>
-            <img src="/animated-popcard/laptop.png" />
+            <img src={laptop} />
             <Name>Gamer 1</Name>
             <Views>12w</Views>
           </Streamer>
           <Streamer>
-            <img src="/animated-popcard/scissors.png" />
+            <img src={scissors} />
             <Name>Gamer 2</Name>
             <Views>12w</Views>
           </Streamer>
           <Streamer>
-            <img src="/animated-popcard/sign.png" />
+            <img src={sign} />
             <Name>Gamer 3</Name>
             <Views>12w</Views>
           </Streamer>
         </Wrapper>
       </Back>
       <BackGround>
-        <img src="/animated-popcard/zelda.jpg" />
+        <img src={zelda} />
         {waveSvg}
       </BackGround>
     </Container>
   )
 }
+
+const waveSvg = (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path
+      fill="#224244"
+      fillOpacity="1"
+      d="M0,160L21.8,149.3C43.6,139,87,117,131,128C174.5,139,218,181,262,176C305.5,171,349,117,393,101.3C436.4,85,480,107,524,122.7C567.3,139,611,149,655,144C698.2,139,742,117,785,96C829.1,75,873,53,916,85.3C960,117,1004,203,1047,202.7C1090.9,203,1135,117,1178,101.3C1221.8,85,1265,139,1309,149.3C1352.7,160,1396,128,1418,112L1440,96L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z"
+    ></path>
+  </svg>
+)
