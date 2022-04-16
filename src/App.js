@@ -11,6 +11,7 @@ import TransitionWrapper from "./components/TransitionWrapper"
 import { TransitionGroup } from "react-transition-group"
 import { CSSTransition } from "react-transition-group"
 import NavDots from "./components/TransitionWrapper/NavDots"
+import throttler from "./misc/throttle"
 
 const Container = styled.div`
   display: flex;
@@ -69,12 +70,13 @@ function App() {
   const location = useLocation()
   const navigate = useNavigate()
 
-  const handleClick = (dr) => {
-    const maxIndex = components.length - 1
-    if (dr === "r") setIndex(index === maxIndex ? 0 : index + 1)
-    else setIndex(index === 0 ? maxIndex : index - 1)
-    setDirection(dr)
-  }
+  const handleClick = (dr) =>
+    throttler.fire(() => {
+      const maxIndex = components.length - 1
+      if (dr === "r") setIndex(index === maxIndex ? 0 : index + 1)
+      else setIndex(index === 0 ? maxIndex : index - 1)
+      setDirection(dr)
+    })
 
   useEffect(() => {
     navigate("/my-components/" + index)
@@ -107,6 +109,19 @@ const components = [
   // <Test />,
 ]
 
-const mapToRoutes = () => components.map((c, i) => <Route key={i} path={"/my-components/" + i} element={c} />)
+const mapToRoutes = () => components.map((c, i) => <Route key={i} path={"my-components/" + i} element={c} />)
 
 export default App
+
+const throttle = (cb, delay = 1000) => {
+  let prevTime = 0
+
+  return () => {
+    const current = Date.now()
+    if (current - prevTime > delay) {
+      console.log("hi")
+      cb()
+      prevTime = current
+    }
+  }
+}
