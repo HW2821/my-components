@@ -89,7 +89,7 @@ const Link = styled.a`
   cursor: pointer;
   padding: 1rem;
   gap: 3rem;
-
+  z-index: 9999999;
   span {
     ${Container}:hover & {
       opacity: 1;

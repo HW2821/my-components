@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useRef, useState } from "react"
-import styled from "styled-components"
+import styled from "styled-components/macro"
 import { DateContext } from "."
 import { format } from "date-fns"
-import { keyframes } from "styled-components"
-import { css } from "styled-components"
+import { keyframes } from "styled-components/macro"
+
 const Container = styled.div`
   margin: 1rem;
   flex: 1;
@@ -52,8 +52,8 @@ export default function ({ hoverDate, start, end, focus, setFocus, show }) {
   }
 
   useEffect(() => {
-    start && focus === "l" && inputRef.current.focus()
-    end && focus === "r" && inputRef.current.focus()
+    show && start && focus === "l" && inputRef.current.focus()
+    show && end && focus === "r" && inputRef.current.focus()
   }, [focus])
 
   useEffect(() => {

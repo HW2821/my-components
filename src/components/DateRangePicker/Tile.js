@@ -75,8 +75,8 @@ export const Tile = ({ date, anchorDate, changeDate }) => {
       !firstDate && setFocus("l")
     }
     if (inMonth) return
-    if (compareAsc(date, anchorDate) < 0) changeDate.addOneMonth()
-    else changeDate.subOneMonth()
+    if (compareAsc(date, anchorDate) < 0) changeDate.subOneMonth()
+    else changeDate.addOneMonth()
   }
 
   const handleEnter = () => {

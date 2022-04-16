@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
-import styled from "styled-components"
+import styled from "styled-components/macro"
 import ArrowIcon from "./ArrowIcon"
 import CalenDarIcon from "./CalendarIcon"
 import Input from "./Input"
@@ -7,7 +7,8 @@ import Panel from "./Panel"
 
 const Container = styled.div`
   position: relative;
-  max-width: 20rem;
+  position: absolute;
+  width: 20rem;
   height: 2rem;
   display: flex;
   align-items: center;
@@ -57,6 +58,7 @@ export default function ({ onChange }) {
   }, [firstDate, secondDate])
 
   useEffect(() => {
+    !show && setHoverDate(null)
     window.onclick = (e) => {
       if (picker.current.contains(e.target) || !show) return
       setShow(false)

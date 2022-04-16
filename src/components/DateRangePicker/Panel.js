@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Calendar from "./Calendar"
 import { addMonths, subMonths, addYears, subYears } from "date-fns"
 import { keyframes } from "styled-components"
+import { CSSTransition } from "react-transition-group"
 
 const panelShow = keyframes`
     from {
