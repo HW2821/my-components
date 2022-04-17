@@ -1,9 +1,6 @@
 import styled from "styled-components/macro"
-import AnimatedCard from "./components/AnimatedCard"
-import AnimatedPopCard from "./components/AnimatedPopCard"
-import SideNavbar from "./components/SideNavbar"
-import DateRangePicker from "./components/DateRangePicker"
-import MultiDropDown from "./components/MultiDropDown"
+
+import { AnimatedCard, AnimatedPopCard, SideNavbar, DateRangePicker, MultiDropDown, Preview } from "./components"
 import Test from "./components/Test"
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
@@ -11,9 +8,10 @@ import TransitionWrapper from "./components/TransitionWrapper"
 import { TransitionGroup } from "react-transition-group"
 import { CSSTransition } from "react-transition-group"
 import NavDots from "./components/TransitionWrapper/NavDots"
-import throttler from "./misc/throttle"
+import throttler from "./helper/throttle"
 
 const Container = styled.div`
+  overflow: hidden;
   display: flex;
   min-height: 100vh;
   width: 100vw;
@@ -64,6 +62,18 @@ const DotContainer = styled.div`
   }
 `
 
+const components = [
+  <DateRangePicker />,
+  <Preview />,
+  <AnimatedPopCard />,
+  <MultiDropDown />,
+  <SideNavbar />,
+  <AnimatedCard />,
+  // <Test />,
+]
+
+const mapToRoutes = () => components.map((c, i) => <Route key={i} path={"my-components/" + i} element={c} />)
+
 function App() {
   const [index, setIndex] = useState(0)
   const [direction, setDirection] = useState("r")
@@ -100,28 +110,4 @@ function App() {
   )
 }
 
-const components = [
-  <DateRangePicker />,
-  <AnimatedPopCard />,
-  <MultiDropDown />,
-  <SideNavbar />,
-  <AnimatedCard />,
-  // <Test />,
-]
-
-const mapToRoutes = () => components.map((c, i) => <Route key={i} path={"my-components/" + i} element={c} />)
-
 export default App
-
-const throttle = (cb, delay = 1000) => {
-  let prevTime = 0
-
-  return () => {
-    const current = Date.now()
-    if (current - prevTime > delay) {
-      console.log("hi")
-      cb()
-      prevTime = current
-    }
-  }
-}

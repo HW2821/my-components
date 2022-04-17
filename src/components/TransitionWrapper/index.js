@@ -20,34 +20,39 @@ const Container = styled.div`
     cursor: not-allowed;
     position: absolute;
     transform: translateX(100vw);
+    transition: 500ms ease-out;
   }
   .right-enter-active {
+    cursor: not-allowed;
     transform: translateX(0);
-    transition: 1000ms ease-out;
+    transition: 500ms ease-out;
     cursor: auto;
   }
   .right-exit {
     transform: translateX(0);
+    transition: 500ms ease-out;
   }
   .right-exit-active {
     transform: translateX(-100vw);
-    transition: 1000ms ease-out;
+    transition: 500ms ease-out;
   }
 
   .left-enter {
     position: absolute;
     transform: translateX(-100vw);
+    transition: 500ms ease-out;
   }
   .left-enter-active {
     transform: translateX(0);
-    transition: 1000ms ease-out;
+    transition: 500ms ease-out;
   }
   .left-exit {
     transform: translateX(0);
+    transition: 500ms ease-out;
   }
   .left-exit-active {
     transform: translateX(100vw);
-    transition: 1000ms ease-out;
+    transition: 500ms ease-out;
   }
 `
 
@@ -57,7 +62,7 @@ export default function ({ children, direction }) {
   return (
     <Container>
       <TransitionGroup className="group">
-        <CSSTransition classNames={direction === "r" ? "right" : "left"} key={location.key} timeout={1000}>
+        <CSSTransition classNames={direction === "r" ? "right" : "left"} key={location.key} timeout={500}>
           {children}
         </CSSTransition>
       </TransitionGroup>
