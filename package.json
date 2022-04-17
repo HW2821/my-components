@@ -15,13 +15,14 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "react-transition-group": "^4.4.2",
+    "source-map-explorer": "^2.5.2",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -46,6 +47,7 @@
   },
   "devDependencies": {
     "babel-plugin-macros": "^3.1.0",
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^3.2.3",
+    "webpack-bundle-analyzer": "^4.5.0"
   }
 }

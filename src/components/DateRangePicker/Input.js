@@ -12,6 +12,7 @@ const Container = styled.div`
 
 const Input = styled.input`
   all: unset;
+  cursor: text;
   width: 100%;
 `
 
@@ -30,7 +31,7 @@ const Bar = styled.div`
   transition: all 0.5s ease;
   border-radius: 1px;
   opacity: 0;
-  animation: ${fade} 0.5s ease forwards;
+  animation: ${fade} 0.2s ease forwards;
   transform: translateX(${({ focus }) => (focus === "l" ? "0" : "calc(100% + 3rem)")});
   display: ${({ show }) => (show ? "" : "none")};
 `
