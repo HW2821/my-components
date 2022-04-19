@@ -27,7 +27,7 @@ const Container = styled.div`
 `
 export const DateContext = React.createContext()
 
-export default function ({ onChange }) {
+export default function Picker({ onChange }) {
   const [firstDate, setFirstDate] = useState(null)
   const [secondDate, setSecondDate] = useState(null)
   const [hoverDate, setHoverDate] = useState(null)
