@@ -1,5 +1,4 @@
 import styled from "styled-components/macro"
-
 import { AnimatedCard, AnimatedPopCard, SideNavbar, DateRangePicker, MultiDropDown, Preview } from "./components"
 import Test from "./components/Test"
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom"
@@ -9,6 +8,7 @@ import { TransitionGroup } from "react-transition-group"
 import { CSSTransition } from "react-transition-group"
 import NavDots from "./components/TransitionWrapper/NavDots"
 import throttler from "./helper/throttle"
+import { css } from "styled-components"
 
 const Container = styled.div`
   overflow: hidden;
@@ -24,7 +24,7 @@ const Container = styled.div`
 
 const Button = styled.button`
   all: unset;
-  position: absolute;
+
   user-select: none;
   padding: 0.5rem;
   color: #c6c6c6;
@@ -38,25 +38,25 @@ const Button = styled.button`
   align-items: center;
   border-radius: 50%;
   transition: 0.2s ease;
-  background-color: #474f45;
+  background-color: #f5f5f510;
+  bottom: 2.5rem;
+  z-index: 999;
+
   &:hover {
     background-color: #53684e;
     transform: scale(1.1);
   }
-  /* top: 0; */
-  bottom: 2.5rem;
-  /* margin-top: auto;
-  margin-bottom: auto; */
-  z-index: 999;
 `
 
-const DotContainer = styled.div`
+const Controls = styled.div`
   position: absolute;
   bottom: 3rem;
   border-radius: 25px;
   background-color: #f5f5f510;
   z-index: 0;
   transition: 0.2s ease;
+  display: flex;
+  gap: 1rem;
   &:hover {
     transform: scale(1.05);
   }
@@ -94,18 +94,19 @@ function App() {
 
   return (
     <Container>
-      <Button style={{ left: "10rem" }} onClick={() => handleClick("l")}>
-        {"<"}
-      </Button>
       <TransitionWrapper direction={direction}>
         <Routes location={location}>{mapToRoutes()}</Routes>
       </TransitionWrapper>
-      <Button style={{ right: "10rem" }} onClick={() => handleClick("r")}>
-        {">"}
-      </Button>
-      <DotContainer>
+
+      <Controls>
+        <Button left onClick={() => handleClick("l")}>
+          {"<"}
+        </Button>
         <NavDots length={components.length} setIndex={setIndex} index={index} setDirection={setDirection} />
-      </DotContainer>
+        <Button right onClick={() => handleClick("r")}>
+          {">"}
+        </Button>
+      </Controls>
     </Container>
   )
 }
